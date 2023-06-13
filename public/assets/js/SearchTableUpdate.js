@@ -15,6 +15,8 @@ $(document).ready(function () {
   });
 
   const cardTransTable = $("#CardTrans").DataTable({
+    dom: "Bfrtip",
+    buttons: ["copy", "csv", "excel", "pdf", "print"],
     data: [],
     columns: [
       // Add your column definitions for the card transactions table here

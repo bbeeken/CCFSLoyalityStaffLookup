@@ -26,7 +26,23 @@ $(document).ready(function () {
       // ...
     ],
   });
+  function resetForm() {
+    $(":input")
+      .not(":button, :submit, :reset, :hidden")
+      .val("")
+      .prop("checked", false)
+      .prop("selected", false);
 
+    // Clear the tables
+    $("#List_SearchedUsers").DataTable().clear().draw();
+    $("#CardTrans").DataTable().clear().draw();
+  }
+
+  // Handle Reset button click
+  $("#Btn_Reset").on("click", function (e) {
+    e.preventDefault();
+    resetForm();
+  });
   // Handle search button click
   $("#Btn_SearchSubmit").on("click", function (e) {
     e.preventDefault();
